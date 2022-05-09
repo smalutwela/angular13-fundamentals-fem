@@ -13,7 +13,7 @@ export class CoursesComponent implements OnInit {
   courses = [
     {
       id: 1,
-      title: 'Angular 13 Fundamentals',
+      title: 'Angular 13 fundamentals',
       description: 'Learn the fundamentals of Angular 13',
       percentComplete: 26,
       favorite: true
@@ -28,6 +28,10 @@ export class CoursesComponent implements OnInit {
   ];
 
   selectedCourse = null;
+
+  txtColor = 'red';
+
+  cssClassName = 'dynamic-classsss';
 
   constructor() { }
 

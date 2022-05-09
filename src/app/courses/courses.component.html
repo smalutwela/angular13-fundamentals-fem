@@ -29,6 +29,14 @@
               <mat-icon>delete</mat-icon>
             </button>
           </mat-list-item>
+          <hr>
+          <div [ngStyle]="{'color': txtColor === 'blue'? 'blue' : 'green'}" >
+            Dynamic Text Color
+          </div>
+
+          <div [ngClass]="cssClassName === 'dynamic-class'? 'dynamic-class' : 'test-class'">
+            Testing ngClass
+          </div>
         </mat-list>
       </mat-card-content>
     </mat-card>
@@ -44,16 +52,20 @@
             <ng-template #elseblock>Select a course</ng-template>
         </mat-card-title>
       </mat-card-header>
-      <mat-card-content>
-        <!-- COURSE FORM -->
-
-        <pre>{{ selectedCourse | json }}</pre>
-        <!-- <h4>{{selectedCourse}}</h4> -->
-      </mat-card-content>
-      <mat-card-actions>
-        <!-- COURSE ACTIONS -->
-        <button type="button" mat-button (click)="selectCourse(null)">Cancel</button>
-      </mat-card-actions>
+      <form #form="ngForm">
+        <mat-card-content>
+          <!-- COURSE FORM -->
+          <pre>{{ selectedCourse | json }}</pre>
+          <!-- <h4>{{selectedCourse}}</h4> -->
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- COURSE ACTIONS -->
+          <button type="button" mat-button (click)="selectCourse(null)">Cancel</button>
+        </mat-card-actions>
+      </form>
+      <hr>
+      <pre>{{form.value | json }}</pre>
+      <pre>{{form.valid | json }}</pre>
     </mat-card>
   </div>
 </div>
